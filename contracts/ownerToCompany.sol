@@ -5,12 +5,25 @@ pragma solidity >=0.7.0 <0.9.0;
 contract OwnerToCompany  {
 
     /**
+     * Address structure
+     * Stores information about the physical address. 
+     */
+    struct Address {
+        string street;
+        string number;
+        string addr_details;
+        string zip_code;
+        string city;
+        string state;
+    }
+
+    /**
      * OwnerInfo structure
      * Stores information about the owner (seller) of the car part being sold. 
      */
     struct OwnerInfo {
         string name;
-        address owner_address;
+        Address owner_address;
         string id; // cpf
     }
 
@@ -20,7 +33,7 @@ contract OwnerToCompany  {
      */
     struct CompanyInfo {
         string name;
-        address company_address;
+        Address company_address;
         string id; // cnpj
     }
 
@@ -94,7 +107,7 @@ contract OwnerToCompany  {
      * setOwnerInfo function
      * Setter for owner information.
      */
-    function setOwnerInfo(string memory _name, address _address, string memory _id) public 
+    function setOwnerInfo(string memory _name, Address memory _address, string memory _id) public 
     {
         OwnerInfo storage owner = owners[salesCount];
         owner.id = _id;
@@ -106,7 +119,7 @@ contract OwnerToCompany  {
      * setCompanyInfo function
      * Setter for company information.
      */
-    function setCompanyInfo(string memory _name, address _address, string memory _id) public 
+    function setCompanyInfo(string memory _name, Address memory _address, string memory _id) public 
     {
         CompanyInfo storage company = companies[salesCount];
         company.id = _id;
