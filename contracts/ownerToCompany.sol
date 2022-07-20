@@ -4,6 +4,12 @@ pragma solidity >=0.7.0 <0.9.0;
 
 contract OwnerToCompany  {
 
+    string private name;
+
+    constructor(string memory _name) {
+        name = _name;
+    }
+
     /**
      * Address structure
      * Stores information about the physical address. 
@@ -79,6 +85,17 @@ contract OwnerToCompany  {
      * GIFT: seller sets price to zero.
      */
     string[3] typesOfSale = ["NORMAL", "TRADE", "GIFT"];
+
+    /**
+     * TODO: getName()
+     */
+    function changeName(string memory _name) public {
+        name = _name;
+    }
+
+    function getName() public view returns (string memory) {
+        return name;
+    }
 
     /**
      * Sale structure

@@ -1,0 +1,650 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Code coverage report for contracts\ownerToCompany.sol</title>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="../prettify.css" />
+    <link rel="stylesheet" href="../base.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style type='text/css'>
+        .coverage-summary .sorter {
+            background-image: url(../sort-arrow-sprite.png);
+        }
+    </style>
+</head>
+<body>
+<div class='wrapper'>
+  <div class='pad1'>
+    <h1>
+      <a href="../index.html">all files</a> / <a href="index.html">contracts/</a> ownerToCompany.sol
+    </h1>
+    <div class='clearfix'>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.71% </span>
+        <span class="quiet">Statements</span>
+        <span class='fraction'>3/28</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">0% </span>
+        <span class="quiet">Branches</span>
+        <span class='fraction'>0/2</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">42.86% </span>
+        <span class="quiet">Functions</span>
+        <span class='fraction'>3/7</span>
+      </div>
+      <div class='fl pad1y space-right2'>
+        <span class="strong">10.34% </span>
+        <span class="quiet">Lines</span>
+        <span class='fraction'>3/29</span>
+      </div>
+    </div>
+  </div>
+  <div class='status-line low'></div>
+<pre><table class="coverage">
+<tr><td class="line-count quiet">1
+2
+3
+4
+5
+6
+7
+8
+9
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47
+48
+49
+50
+51
+52
+53
+54
+55
+56
+57
+58
+59
+60
+61
+62
+63
+64
+65
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90
+91
+92
+93
+94
+95
+96
+97
+98
+99
+100
+101
+102
+103
+104
+105
+106
+107
+108
+109
+110
+111
+112
+113
+114
+115
+116
+117
+118
+119
+120
+121
+122
+123
+124
+125
+126
+127
+128
+129
+130
+131
+132
+133
+134
+135
+136
+137
+138
+139
+140
+141
+142
+143
+144
+145
+146
+147
+148
+149
+150
+151
+152
+153
+154
+155
+156
+157
+158
+159
+160
+161
+162
+163
+164
+165
+166
+167
+168
+169
+170
+171
+172
+173
+174
+175
+176
+177
+178
+179
+180
+181
+182
+183
+184
+185
+186
+187
+188
+189
+190
+191
+192
+193
+194
+195
+196</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">6×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">2×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">// SPDX-License-Identifier: MIT
+&nbsp;
+pragma solidity &gt;=0.7.0 &lt;0.9.0;
+&nbsp;
+contract OwnerToCompany  {
+&nbsp;
+    string private name;
+&nbsp;
+    constructor(string memory _name) {
+        name = _name;
+    }
+&nbsp;
+    /**
+     * Address structure
+     * Stores information about the physical address. 
+     */
+    struct Address {
+        string street;
+        string number;
+        string addr_details;
+        string zip_code;
+        string city;
+        string state;
+    }
+&nbsp;
+    /**
+     * OwnerInfo structure
+     * Stores information about the owner (seller) of the car part being sold. 
+     */
+    struct OwnerInfo {
+        string name;
+        Address owner_address;
+        string id; // cpf
+    }
+&nbsp;
+    /**
+     * CompanyInfo structure
+     * Stores information about the company (buyer) buying the car part.
+     */
+    struct CompanyInfo {
+        string name;
+        Address company_address;
+        string id; // cnpj
+    }
+&nbsp;
+    /**
+     * Date structure
+     * Date format.
+     */
+    struct Date {
+        uint8 day;
+        uint8 month;
+        uint16 year;
+&nbsp;
+        uint8 hour;
+        uint8 minute;
+    }
+&nbsp;
+    /**
+     * CarPartDescription structure
+     * Stores the description for the car part.
+     */
+    struct CarPartDescription {
+        string model;
+        string color;
+        Date creation;
+    }
+&nbsp;
+    /**
+     * CarPartInfo structure
+     * Stores information about the car part.
+     * The uid property holds a unique number to uniquely identify each car part. This unique number is set by the car part creator.
+     */
+    struct CarPartInfo {
+        string uid; // car part uid (provided by initial car company)
+        string name;
+        CarPartDescription description;
+    }
+&nbsp;
+    /**
+     * typesOfSale array
+     * Stores the three possible sale types.
+     * NORMAL: seller sets prices and company buys it.
+     * TRADE: seller and buyer trading products (ignored by the current implementation).
+     * GIFT: seller sets price to zero.
+     */
+    string[3] typesOfSale = ["NORMAL", "TRADE", "GIFT"];
+&nbsp;
+    /**
+     * TODO: getName()
+     */
+    function changeName(string memory _name) public {
+        name = _name;
+    }
+&nbsp;
+    function getName() public view returns (string memory) {
+        return name;
+    }
+&nbsp;
+    /**
+     * Sale structure
+     * Stores information about the sale.
+     * Main structure.
+     */
+    struct Sale {
+        string type_of_sale;
+        Date date;
+        OwnerInfo owner_info;
+        CompanyInfo company_info;
+        CarPartInfo carPart_info;
+        uint128 price;
+    }
+&nbsp;
+    /* Mapping properties */
+    mapping(uint =&gt; Sale) sales;
+    mapping(uint =&gt; OwnerInfo) owners;
+    mapping(uint =&gt; CompanyInfo) companies;
+    mapping(uint =&gt; Date) dates;
+&nbsp;
+    /* Sales counter. Incremented for each added sale. */
+    uint salesCount = 0;
+&nbsp;
+    /**
+     * setOwnerInfo function
+     * Setter for owner information.
+     */
+<span class="fstat-no" title="function not covered" >    function setOwnerInfo(string memory _name, Address memory _address, string memory _id) public </span>
+    {
+<span class="cstat-no" title="statement not covered" >        OwnerInfo storage owner = owners[salesCount];</span>
+<span class="cstat-no" title="statement not covered" >        owner.id = _id</span>;
+<span class="cstat-no" title="statement not covered" >        owner.name = _name</span>;
+<span class="cstat-no" title="statement not covered" >        owner.owner_address = _address</span>;
+    }
+&nbsp;
+    /**
+     * setCompanyInfo function
+     * Setter for company information.
+     */
+<span class="fstat-no" title="function not covered" >    function setCompanyInfo(string memory _name, Address memory _address, string memory _id) public </span>
+    {
+<span class="cstat-no" title="statement not covered" >        CompanyInfo storage company = companies[salesCount];</span>
+<span class="cstat-no" title="statement not covered" >        company.id = _id</span>;
+<span class="cstat-no" title="statement not covered" >        company.name = _name</span>;
+<span class="cstat-no" title="statement not covered" >        company.company_address = _address</span>;
+    }
+&nbsp;
+    /**
+     * setDate function
+     * Setter for date information.
+     */
+<span class="fstat-no" title="function not covered" >    function setDate(uint8 day, uint8 month, uint16 year, uint8 hour, uint8 minute) public </span>
+    {
+<span class="cstat-no" title="statement not covered" >        Date storage date = dates[salesCount];</span>
+<span class="cstat-no" title="statement not covered" >        date.day = day</span>;
+<span class="cstat-no" title="statement not covered" >        date.month = month</span>;
+<span class="cstat-no" title="statement not covered" >        date.year = year</span>;
+<span class="cstat-no" title="statement not covered" >        date.hour = hour</span>;
+<span class="cstat-no" title="statement not covered" >        date.minute = minute</span>;
+    }
+&nbsp;
+    /**
+     * addSale function
+     * Adds a Sale to the blockchain.
+     * Assisted by the salesCount variable as index.
+     * Returns the inserted Sale index. 
+     */
+<span class="fstat-no" title="function not covered" >    function addSale (</span>
+        string memory type_of_sale,
+        Date memory date,
+        address payable owner_info,
+        CarPartInfo memory carPart_info,
+        uint128 price
+    ) 
+    public 
+    payable 
+    returns (bool, string memory, int) 
+    {
+<span class="cstat-no" title="statement not covered" >        if (msg.value != price) {</span>
+<span class="cstat-no" title="statement not covered" >            owner_info.transfer(msg.value)</span>;
+<span class="cstat-no" title="statement not covered" >            return (false, "Informed price does not correspond to sent in the message", -1);</span>
+        }
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        Sale storage sale = sales[salesCount];</span>
+<span class="cstat-no" title="statement not covered" >        sale.type_of_sale = type_of_sale</span>;
+<span class="cstat-no" title="statement not covered" >        sale.date = date</span>;
+<span class="cstat-no" title="statement not covered" >        sale.owner_info = owners[salesCount]</span>;
+<span class="cstat-no" title="statement not covered" >        sale.company_info = companies[salesCount]</span>;
+<span class="cstat-no" title="statement not covered" >        sale.carPart_info = carPart_info</span>;
+<span class="cstat-no" title="statement not covered" >        sale.price = price</span>;
+&nbsp;
+        salesCount++;
+&nbsp;
+<span class="cstat-no" title="statement not covered" >        return (true, "Success!", int(salesCount - 1));</span>
+    }
+&nbsp;
+}</pre></td></tr>
+</table></pre>
+<div class='push'></div><!-- for sticky footer -->
+</div><!-- /wrapper -->
+<div class='footer quiet pad2 space-top1 center small'>
+  Code coverage
+  generated by <a href="http://istanbul-js.org/" target="_blank">istanbul</a> at Wed Jul 20 2022 18:06:04 GMT-0300 (GMT-03:00)
+</div>
+</div>
+<script src="../prettify.js"></script>
+<script>
+window.onload = function () {
+        if (typeof prettyPrint === 'function') {
+            prettyPrint();
+        }
+};
+</script>
+<script src="../sorter.js"></script>
+</body>
+</html>
