@@ -37,8 +37,8 @@
       ]
     },
     "C:\\Users\\samsung\\Desktop\\BlockchainAndCripto\\smart-recycling-car-parts\\contracts\\ownerToCompany.sol": {
-      "lastModificationDate": 1658349787655,
-      "contentHash": "c2ef2068af17fd02da901a436397e071",
+      "lastModificationDate": 1658434474514,
+      "contentHash": "43f80697db4b99d48f9bed73e2d20e42",
       "sourceName": "contracts/ownerToCompany.sol",
       "solcConfig": {
         "version": "0.8.9",

@@ -87,17 +87,6 @@ contract OwnerToCompany  {
     string[3] typesOfSale = ["NORMAL", "TRADE", "GIFT"];
 
     /**
-     * TODO: getName()
-     */
-    function changeName(string memory _name) public {
-        name = _name;
-    }
-
-    function getName() public view returns (string memory) {
-        return name;
-    }
-
-    /**
      * Sale structure
      * Stores information about the sale.
      * Main structure.
@@ -119,6 +108,22 @@ contract OwnerToCompany  {
 
     /* Sales counter. Incremented for each added sale. */
     uint salesCount = 0;
+
+    /**
+     * changeName function
+     * Setter/update for name property.
+     */
+    function changeName(string memory _name) public {
+        name = _name;
+    }
+
+    /**
+     * getName function
+     * Getter for name property.
+     */
+    function getName() public view returns (string memory) {
+        return name;
+    }
 
     /**
      * setOwnerInfo function
@@ -170,7 +175,7 @@ contract OwnerToCompany  {
         address payable owner_info,
         CarPartInfo memory carPart_info,
         uint128 price
-    ) 
+    )
     public 
     payable 
     returns (bool, string memory, int) 
